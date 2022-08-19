@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Fantasma</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <div id="header-div" >
+            <h1>Banco Fantasma</h1>
+            <p id="subt">Parece una estafa, pero nunca vas a encontrar algo igual!</p>
+        </div>
+        <div>
+            <img width="150px" height="150px" src="/png-transparent-ghosting-logo-ghost.png" >
+        </div>
+    </header>
+    <main>
+        <div>
+            <p>Prestamos bancarios con la mejor tasa del mercado, <br>
+            para tener mas informacion acerca de los prestamos llama por telefono!</p>
+
+        </div>
+        
+        <div id="input-div">
+            <label for="montoPedido">¿Cual es el monto del prestamo a solicitar?</label><br>
+            AR$<input type="number" name="montoPedido" id="montoPedido" min="1" max="10000000"><br>
+            <br>
+            <input type="button" value="Siguiente" onclick="llamar()">
+
+        </div>
+        <div id="select-div">
+            <ul id="cuotasAnswer"></ul>
+            <label id="selectLabel" for="selectCuotas">Seleccione la cantidad de cuotas que desee:  </label><br>
+            <br><br>
+            <input type="button" value="Siguiente" onclick="paso2()">
+        </div>
+        
+        <span id="answer-span" ></span>
+        
+    </main>
+    <footer>
+        
+        <h3>Banco Fantasma</h3>
+        
+    </footer>
+
+    <script src="/app.js"></script>
+</body>
+</html>

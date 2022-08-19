@@ -1,0 +1,44 @@
+#header {
+    background-color: #fafafa; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    width: 100%;
+}
+
+#header-div{
+    width: fit-content;
+    margin: auto;
+    margin-left: 0px;
+}
+
+h1{
+    padding-left: 50px;
+}
+#subt{
+    padding-left: 50px; 
+    font-size: x-small; 
+    margin: auto;
+}
+
+main{
+    padding-left: 40px;
+}
+
+#select-div{
+    display: none;
+}
+
+#answer-span{
+    display: none;
+}
+
+footer{
+    background-color: #ededed; 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    width: 100%;
+    margin-top: 100px;
+    height: 70px;
+}
