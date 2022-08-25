@@ -22,9 +22,16 @@ let cantCuotas = [
 ];
 
 function llamar() {
+    
     let pedido = document.getElementById("montoPedido").value;
     sessionStorage.setItem('pedido', pedido);
-    console.log('Monto Pedido ', sessionStorage.getItem('pedido'));
+    Toastify({
+        text: "El monto solicitado es: $"+pedido,
+        duration: 5000,
+        gravity: 'top',
+        position: 'right'
+      }).showToast();
+    if(sessionStorage.getItem('pedido') != ""){
     let input = document.getElementById("input-div");
     input.style.display = "none";
     let selectDiv = document.getElementById("select-div");
@@ -54,12 +61,19 @@ function llamar() {
             option.appendChild(optionText);
             select.appendChild(option);
         }
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: '¡Uy!',
+            text: 'No ingresaste un monto.'
+          })
+    }
 }
 
 function paso2(){
     let cuotas = document.querySelector("div#select-div select").value;
     sessionStorage.setItem('cuotas', cuotas);
-    console.log('Cuotas seleccionadas ', sessionStorage.getItem('cuotas'));
+    if(sessionStorage.getItem('cuotas') != ""){
     let prueba = cantCuotas.filter(function (cantCuotas) { return cantCuotas.cant == sessionStorage.getItem('cuotas'); });
     if(prueba[0].cant == sessionStorage.getItem('cuotas')){
         function calcFinal(){
@@ -73,10 +87,21 @@ function paso2(){
             let answer = document.getElementById("answer-span");
             answer.style.display = "block";
             answer.innerHTML = response;
+            Toastify({
+                text: "Llenaste el simulador de prestamos correctamente!",
+                duration: 5000,
+                gravity: 'top',
+                position: 'right'
+              }).showToast();
         }
         calcFinal();
-        
-
+    }
+    }else{
+        Swal.fire({
+            icon: 'error',
+            title: '¡Uy!',
+            text: 'No seleccionaste la cantidad de cuotas.'
+          })
     }
 }
 
