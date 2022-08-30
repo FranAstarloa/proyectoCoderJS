@@ -39,8 +39,31 @@
             <input type="button" value="Siguiente" onclick="paso2()">
         </div>
         
-        <span id="answer-span" ></span>
-        
+        <form id="form">
+            <div class="field">
+              <label for="from_name">Tu mail</label>
+              <input type="email" name="from_name" id="from_name" required>
+            </div>
+            <div class="field">
+              <label for="to_name">Tu nombre</label>
+              <input type="text" name="to_name" id="to_name" required>
+            </div>
+            
+            <div class="field" id="message">
+              <input type="text" name="message" id="answer-span">
+            </div><br>
+            <input type="submit" id="button" value="Enviar informacion" >
+          </form>
+          
+          <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+          
+          <script type="text/javascript">
+            emailjs.init('qkbv3cezJAAiRuK3d')
+          </script>
+
+
+
     </main>
     <footer>
         
@@ -50,5 +73,6 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="/app.js"></script>
+    <script type="text/javascript" src="/email.js"></script>
 </body>
 </html>

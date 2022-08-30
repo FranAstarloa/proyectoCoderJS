@@ -81,12 +81,14 @@ function paso2(){
             let cuota = pedido/prueba[0].cant;
             let cuotaFinal = prueba[0].interes * cuota;
             let final = cuotaFinal * prueba[0].cant;
-            let response = "".concat("Terminas pagando $", Math.round((final + Number.EPSILON) * 100) / 100, " en ", cuotas," cuotas de $ ", Math.round((cuotaFinal + Number.EPSILON) * 100) / 100, " a cambio de $", pedido);
+            let response = "".concat("Pagarías $", Math.round((final + Number.EPSILON) * 100) / 100, " en ", cuotas," cuotas de $ ", Math.round((cuotaFinal + Number.EPSILON) * 100) / 100, " a cambio de $", pedido);
+            sessionStorage.setItem("response",response);
             let select = document.getElementById("select-div");
             select.style.display = "none";
+            let form = document.getElementById("form");
+            form.style.display = "block";
             let answer = document.getElementById("answer-span");
-            answer.style.display = "block";
-            answer.innerHTML = response;
+            answer.value = response;
             Toastify({
                 text: "Llenaste el simulador de prestamos correctamente!",
                 duration: 5000,
